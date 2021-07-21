@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { NewRoom } from './pages/NewRoom';
 
 import './services/firebase';
 
