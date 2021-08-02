@@ -1,13 +1,13 @@
 import { Link, useHistory } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
-import { Button } from '../components/Button';
+import { Button } from '../components/_Button';
 import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 
-import '../styles/auth.scss';
+import { StyledPageAuth } from '../styles/auth';
 export function NewRoom () {
 	const {user} = useAuth();
 	const history = useHistory();
@@ -30,7 +30,7 @@ export function NewRoom () {
 	}
 
 	return (
-		<div id='page-auth'>
+		<StyledPageAuth>
 			<aside>
 				<img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
 				<strong>Crie salas de Q&amp;A ao-vivo</strong>
@@ -53,6 +53,6 @@ export function NewRoom () {
 					</p>
 				</div>
 			</main>
-		</div>
+		</StyledPageAuth>
 	)
 }

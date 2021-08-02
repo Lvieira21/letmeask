@@ -1,4 +1,6 @@
-.question {
+import styled from 'styled-components';
+
+export const StyledQuestion = styled.div`
 	background: #fefefe;
 	border-radius: 8px;
 	box-shadow:0 2px 12px rgba(0, 0, 0, 0.04);
@@ -84,4 +86,6 @@
       }
 
    }
-}
+`;
+
+

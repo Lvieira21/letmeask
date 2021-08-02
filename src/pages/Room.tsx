@@ -1,15 +1,15 @@
 import { useParams } from 'react-router-dom';
 
-import { Button } from "../components/Button";
+import { Button } from "../components/_Button";
 import logoImg from '../assets/images/logo.svg';
 
-import '../styles/room.scss';
-import { RoomCode } from "../components/RoomCode";
+import { RoomCode } from "../components/_RoomCode/RoomCode";
 import { FormEvent, useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
-import { Question } from '../components/Question';
+import { Question } from '../components/_Question';
 import { useRoom } from '../hooks/useRoom';
+import { StyledPageRoom } from '../styles/room';
 
 type RoomParams = {
 	id: string;
@@ -61,7 +61,7 @@ export function Room() {
    }
 
 	return (
-		<div id="page-room">
+		<StyledPageRoom>
 			<header>
 				<div className="content">
 					<img src={logoImg} alt="Letmeask" />
@@ -122,6 +122,6 @@ export function Room() {
                })}
             </div>
 			</main>
-		</div>
+		</StyledPageRoom>
 	);
 }

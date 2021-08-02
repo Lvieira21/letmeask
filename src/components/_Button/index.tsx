@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
-import  '../styles/button.scss';
+import { StyledButton } from './styles'; 
 
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -10,7 +10,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 // ... -> rest operator, ou operador de resto
 export function Button({ isOutlined, ...props}: ButtonProps) {
 	return (
-		<button 
+		<StyledButton 
          className={`button ${isOutlined ? 'outlined' : ''}`}
          {...props} 
       />

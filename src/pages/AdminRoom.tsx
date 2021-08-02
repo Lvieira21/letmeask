@@ -1,18 +1,18 @@
 
 import { useHistory, useParams } from 'react-router-dom';
 
-import { Button } from "../components/Button";
+import { Button } from "../components/_Button";
 import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
 
-import '../styles/room.scss';
-import { RoomCode } from "../components/RoomCode";
-import { Question } from '../components/Question';
+import { RoomCode } from "../components/_RoomCode/RoomCode";
+import { Question } from '../components/_Question';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
+import { StyledPageRoom } from '../styles/room';
 
 type RoomParams = {
 	id: string;
@@ -52,7 +52,7 @@ export function AdminRoom() {
 	}
 
 	return (
-		<div id="page-room">
+		<StyledPageRoom>
 			<header>
 				<div className="content">
 					<img src={logoImg} alt="Letmeask" />
@@ -106,6 +106,6 @@ export function AdminRoom() {
                })}
             </div>
 			</main>
-		</div>
+		</StyledPageRoom>
 	);
 }

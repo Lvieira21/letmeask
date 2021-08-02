@@ -1,4 +1,6 @@
-#page-auth {
+import styled from 'styled-components';
+
+export const StyledPageAuth = styled.div`
 	display: flex;
 	align-items: stretch;
 	height: 100vh;
@@ -140,5 +142,4 @@
 		}
 	}
 
-
-}
+`;

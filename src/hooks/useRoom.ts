@@ -39,21 +39,23 @@ export function useRoom(roomId: string) {
             const databaseRoom = room.val()
             const firebaseQuestions : FirebaseQuestions = databaseRoom.questions;
 
-            const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
-               return {
-                  id: key,
-                  content: value.content,
-                  author: value.author,
-                  isHighlighted: value.isHighlighted,
-                  isAnswered: value.isAnswered,
-                  likeCount: Object.values(value.likes ?? {}).length,
-                  likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
-                  // ?. Verifica se o que está antes tem valor, e se tiver, acessa a posição do array designada, se nao tiver valor, nao tenta acessar nada.
-               }
-            }) //val() é uma API do firebase
+            if (firebaseQuestions != null) {
+               const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
+                  return {
+                     id: key,
+                     content: value.content,
+                     author: value.author,
+                     isHighlighted: value.isHighlighted,
+                     isAnswered: value.isAnswered,
+                     likeCount: Object.values(value.likes ?? {}).length,
+                     likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
+                     // ?. Verifica se o que está antes tem valor, e se tiver, acessa a posição do array designada, se nao tiver valor, nao tenta acessar nada.
+                  }
+               }) //val() é uma API do firebase
+            setQuestions(parsedQuestions);
+            }
 
             setTitle(databaseRoom.title);
-            setQuestions(parsedQuestions);
          })
 
          return () => {
