@@ -26,7 +26,7 @@ export const StyledRoomCode = styled.button`
 		align-items: center;
 		flex: 1;
 		padding: 10px 16px 10px 12px;
-		width: 230px;
+		width: 240px;
 		font-size: 14px;
 		font-weight: 500;
 	}

@@ -5,11 +5,15 @@ import googleIconImg from '../assets/images/google-icon.svg';
 
 import { Button } from '../components/_Button';
 import { useAuth } from '../hooks/useAuth';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useContext } from 'react';
 import { database } from '../services/firebase';
 import { StyledPageAuth } from '../styles/auth';
+import Switch from 'react-switch';
+import { ThemeContext } from 'styled-components';
+import { shade } from 'polished';
 
 export function Home () {
+	const {colors} = useContext(ThemeContext);
 	const history = useHistory();
 	const { user, signInWithGoogle } = useAuth();
 	const [roomCode, setRoomCode] = useState('');
@@ -53,7 +57,20 @@ export function Home () {
 			</aside>
 			<main>
 				<div className="main-content">
-					<img src={logoImg} alt="Letmeask" />
+					<img src={logoImg} alt="Letmeask" />   
+					<div className="switch-container">
+						<Switch 
+							onChange={() => {}}
+							checked={true}
+							checkedIcon={false}
+							uncheckedIcon={false}
+							height={10}
+							width={40}
+							handleDiameter={20}
+							onHandleColor={shade(0.15, colors.background)}
+							onColor={colors.primary}
+						/>
+					</div>   
 					<button onClick={handleCreateRoom} className="create-room">
 						<img src={googleIconImg} alt="Logo da Google" />
 							Crie sua sala com o Google

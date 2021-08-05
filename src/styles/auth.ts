@@ -54,6 +54,11 @@ export const StyledPageAuth = styled.div`
 			align-self: center;
 		}
 
+		.switch-container {
+			margin-top: 16px;
+		}
+		
+
 		h2 {
 			font-size: 24px;
 			font-weight: bold;
@@ -92,7 +97,7 @@ export const StyledPageAuth = styled.div`
 
 
 	.create-room {
-		margin-top: 64px;
+		margin-top: 20px;
 		height: 50px;
 		border-radius: 8px;
 		font-weight: 500;
