@@ -64,5 +64,5 @@ export function useRoom(roomId: string) {
       }, [roomId, user?.id]); //Se o array está vazio, ele é executado apenas na primeira vez que carrega (Toda vez que mudar o que está na Array, o hook é executado novamente)
 
 
-      return {questions, title}
+   return {questions, title}
 }

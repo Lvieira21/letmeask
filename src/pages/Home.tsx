@@ -12,8 +12,12 @@ import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
 
-export function Home () {
-	const {colors} = useContext(ThemeContext);
+interface Props {
+	toggleTheme(): void;
+}
+
+export function Home (props: Props) {
+	const { colors, title } = useContext(ThemeContext);
 	const history = useHistory();
 	const { user, signInWithGoogle } = useAuth();
 	const [roomCode, setRoomCode] = useState('');
@@ -60,8 +64,8 @@ export function Home () {
 					<img src={logoImg} alt="Letmeask" />   
 					<div className="switch-container">
 						<Switch 
-							onChange={() => {}}
-							checked={true}
+							onChange={props.toggleTheme}
+							checked={title === 'dark'}
 							checkedIcon={false}
 							uncheckedIcon={false}
 							height={10}

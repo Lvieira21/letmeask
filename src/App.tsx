@@ -7,13 +7,14 @@ import { AuthContextProvider } from './contexts/AuthContext'
 import { Room } from "./pages/Room";
 import { AdminRoom } from "./pages/AdminRoom";
 
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider} from 'styled-components';
 import light from './styles/themes/light';
-import dark from './styles/themes/light';
+import dark from './styles/themes/dark';
 import GlobalStyle from './styles/global';
 
 
 function App() {
+
   const [theme, setTheme] = useState(light);
 
   const toggleTheme = () => {
@@ -21,12 +22,14 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={ theme }>
       <GlobalStyle />
       <BrowserRouter >
         <AuthContextProvider>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact > 
+              <Home toggleTheme={ toggleTheme }/>
+            </Route>
             <Route path="/rooms/new" component={NewRoom} />
             <Route path="/rooms/:id" component={Room} />
             <Route path="/admin/rooms/:id" component={AdminRoom} />
