@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 
 import { Button } from "../components/_Button";
-import logoImg from '../assets/images/logo.svg';
 
 import { RoomCode } from "../components/_RoomCode/RoomCode";
 import { FormEvent, useState } from 'react';
@@ -10,6 +9,7 @@ import { database } from '../services/firebase';
 import { Question } from '../components/_Question';
 import { useRoom } from '../hooks/useRoom';
 import { StyledPageRoom } from '../styles/room';
+import { Logo } from '../components/_Logo';
 
 type RoomParams = {
 	id: string;
@@ -64,7 +64,7 @@ export function Room() {
 		<StyledPageRoom>
 			<header>
 				<div className="content">
-					<img src={logoImg} alt="Letmeask" />
+					<Logo />
 					<RoomCode code={roomId} />
 				</div>
 			</header>

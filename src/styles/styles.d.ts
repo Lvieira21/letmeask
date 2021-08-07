@@ -6,10 +6,23 @@ declare module 'styled-components' {
 
 		colors: {
 			primary : string;
-			secundary : string;
+			secondary : string;
+			accent: string;
 			
 			background: string;
+			backgroundSecondary: string;
 			text: string;
+			subtext: string;
+			placeholder: string; 
+			input: string;
+			authButton: string;
+
+			border: string;
+
+			questionAccent: string;
+			questionBackground: string;
+			questionHighlighted: string;
+			questionAnswered: string;
 		}
 	}
 }

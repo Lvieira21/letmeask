@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledPageRoom = styled.div `
 	header {
 		padding: 24px;
-		border-bottom: 1px solid #e2e2e2;
+		border-bottom: 1px solid ${props => props.theme.colors.border};
 
 		.content {
 
@@ -40,15 +40,15 @@ export const StyledPageRoom = styled.div `
 			h1 {
 				font-family: 'Poppins', sans-serif;
 				font-size: 24px;
-				color: #29292e;
+				color: ${props => props.theme.colors.text};
 			}
 
 			span {
 				margin-left: 16px;
-				background:#e559f9;
+				background:${props => props.theme.colors.accent};
 				border-radius: 9999px;
 				padding: 8px 16px;
-				color: #FFF;
+				color: ${props => props.theme.colors.secondary};
 				font-weight: 500;
 				font-size: 14px;
 			}
@@ -60,7 +60,7 @@ export const StyledPageRoom = styled.div `
 				border: 0;
 				padding: 16px;
 				border-radius: 8px;
-				background: #fefefe;
+				background: ${props => props.theme.colors.input};
 				box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 				resize: vertical;
 				min-height: 180px;
@@ -77,7 +77,7 @@ export const StyledPageRoom = styled.div `
 					align-items: center;
 
 					img {
-						border: 2px solid #835AFD;
+						border: 2px solid ${props => props.theme.colors.primary};
 						border-radius: 30%;
 						width:32px;
 						height:32px;
@@ -86,7 +86,7 @@ export const StyledPageRoom = styled.div `
 
 					> span {
 						margin-left: 8px;
-						color: #29292e;
+						color: ${props => props.theme.colors.text};
 						font-weight: 500;
 						font-size: 14px;
 					}
@@ -94,13 +94,13 @@ export const StyledPageRoom = styled.div `
 
 				span{
 					font-size: 14px;
-					color: #737380;
+					color: ${props => props.theme.colors.subtext};
 					font-weight: 500;
 
 					button {
 						background: transparent;
 						border: none;
-						color: #835AFD;
+						color: ${props => props.theme.colors.primary};
 						text-decoration: underline;
 						font-size: 14px;
 						font-weight: 500;

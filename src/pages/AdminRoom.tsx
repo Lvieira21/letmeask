@@ -2,7 +2,6 @@
 import { useHistory, useParams } from 'react-router-dom';
 
 import { Button } from "../components/_Button";
-import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
@@ -13,6 +12,7 @@ import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
 import { StyledPageRoom } from '../styles/room';
+import { Logo } from '../components/_Logo';
 
 type RoomParams = {
 	id: string;
@@ -55,7 +55,7 @@ export function AdminRoom() {
 		<StyledPageRoom>
 			<header>
 				<div className="content">
-					<img src={logoImg} alt="Letmeask" />
+					<Logo />
                <div>
                   <RoomCode code={roomId} />
                   <Button isOutlined onClick={handleEndRoom}>Encerrar Sala</Button> 

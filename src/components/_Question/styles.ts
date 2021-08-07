@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledQuestion = styled.div`
-	background: #fefefe;
+	background: ${props => props.theme.colors.questionBackground};
 	border-radius: 8px;
 	box-shadow:0 2px 12px rgba(0, 0, 0, 0.04);
 	padding:24px;
@@ -12,20 +12,20 @@ export const StyledQuestion = styled.div`
    }
    
    &.highlighted {
-      background: #f4f0ff;
-      border: 1px solid #835afd;
+      background: ${props => props.theme.colors.questionHighlighted};
+      border: 1px solid ${props => props.theme.colors.questionAccent};
 
       footer .user-info span {
-         color: #29292e;
+         color: ${props => props.theme.colors.text};
       }
    }
 
    &.answered {
-      background: #DCDCDD;
+      background: ${props => props.theme.colors.questionAnswered};
    }
 
 	p {
-		color: #29292e;
+		color: ${props => props.theme.colors.text};
 	}
 
    footer {
@@ -39,7 +39,7 @@ export const StyledQuestion = styled.div`
          align-items: center;
 
          img {
-            border: 2px solid #835AFD;
+            border: 2px solid ${props => props.theme.colors.questionAccent};
             border-radius: 30%;
             width:32px;
             height:32px;
@@ -48,7 +48,7 @@ export const StyledQuestion = styled.div`
 
          span {
             margin-left: 8px;
-            color: #737380;
+            color: ${props => props.theme.colors.subtext};
             font-size: 14px;
          }
       }
@@ -67,14 +67,14 @@ export const StyledQuestion = styled.div`
          &.like-button {
             display:flex;
             align-items: flex-end;
-            color: #737380;
+            color:${props => props.theme.colors.subtext};
             gap: 8px;
 
             &.liked {
-               color: #835afd;
+               color: ${props => props.theme.colors.questionAccent};
 
                svg path {
-                  stroke: #835afd;
+                  stroke: ${props => props.theme.colors.questionAccent};
                }
             }
          }

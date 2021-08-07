@@ -5,9 +5,9 @@ import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
 
 import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
 
 import { StyledPageAuth } from '../styles/auth';
+import { Logo } from '../components/_Logo';
 export function NewRoom () {
 	const {user} = useAuth();
 	const history = useHistory();
@@ -38,7 +38,7 @@ export function NewRoom () {
 			</aside>
 			<main>
 				<div className="main-content">
-					<img src={logoImg} alt="Letmeask" />
+					<Logo />
 					<h2>Criar uma nova sala</h2>
 					<form onSubmit={handleCreateRoom}>
 						<input type="text" 

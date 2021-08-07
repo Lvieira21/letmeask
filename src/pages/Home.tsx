@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
+import { Logo } from '../components/_Logo'
 
 import { Button } from '../components/_Button';
 import { useAuth } from '../hooks/useAuth';
@@ -61,18 +61,19 @@ export function Home (props: Props) {
 			</aside>
 			<main>
 				<div className="main-content">
-					<img src={logoImg} alt="Letmeask" />   
+					<Logo />
 					<div className="switch-container">
 						<Switch 
 							onChange={props.toggleTheme}
 							checked={title === 'dark'}
 							checkedIcon={false}
 							uncheckedIcon={false}
-							height={10}
-							width={40}
+							height={30}
+							width={55}
 							handleDiameter={20}
 							onHandleColor={shade(0.15, colors.background)}
-							onColor={colors.primary}
+							onColor={colors.text}
+							offColor={colors.text}
 						/>
 					</div>   
 					<button onClick={handleCreateRoom} className="create-room">
