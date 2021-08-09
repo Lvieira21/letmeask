@@ -29,6 +29,7 @@ The admin then, can highlight, delete or mark the question as answered.
 
 ---
 ### TODO
-Responsiveness;
-Use React-Modal instead of alerts;
-Unmark question as answered (if marked by mistake);
+- Responsiveness;
+- Use React-Modal instead of alerts;
+- Unmark question as answered (if marked by mistake);
+- Multiple language support;
