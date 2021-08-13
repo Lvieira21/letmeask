@@ -11,12 +11,18 @@ import { StyledPageAuth } from '../styles/auth';
 import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
+import { MyThemeContext } from '../contexts/ThemeContext';
+import dark from '../styles/themes/dark';
 
 interface Props {
-	toggleTheme(): void;
 }
 
 export function Home (props: Props) {
+
+	
+	const { theme, toggleTheme } = useContext(MyThemeContext);
+	console.log('teste', theme);
+	
 	const { colors, title } = useContext(ThemeContext);
 	const history = useHistory();
 	const { user, signInWithGoogle } = useAuth();
@@ -64,7 +70,7 @@ export function Home (props: Props) {
 					<Logo />
 					<div className="switch-container">
 						<Switch 
-							onChange={props.toggleTheme}
+							onChange={toggleTheme}
 							checked={title === 'dark'}
 							checkedIcon={false}
 							uncheckedIcon={false}
