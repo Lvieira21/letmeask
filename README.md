@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Let me ask!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
+This project was made during Rocket Seat's NLW.
 
-In the project directory, you can run:
+Let me Ask is an app to help you manage livestreams or classes in a way that you can interact with your audience.
+![LMA main page](https://user-images.githubusercontent.com/14310311/128739811-8f5ee18b-acdc-48a5-b0ca-0e83728546b6.png)
 
-### `yarn start`
+In short, is an app that let's you create a private room for your audience where they can ask you questions about whatever they want.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The audience can post questions and vote for a question that they might also have.
+![image](https://user-images.githubusercontent.com/14310311/128740173-8a1d56eb-c0bb-4f63-970c-eaaa4651a65a.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+The admin then, can highlight, delete or mark the question as answered.
+![image](https://user-images.githubusercontent.com/14310311/128740291-863b2844-1ee9-4fb7-a3a5-8b26098a0fea.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Stack
+- It was made with React, through `yarn create react-app --template typescript`, therefore it is made with TypeScript.
+- It's styles are made with [Styled-components](https://styled-components.com/).
+- The persistence is done through Firebase's Realtime Database.
 
-### `yarn build`
+## Features
+- Google's authentication;
+- Styled-component;
+- It is packed with a native Dark theme, switchable through the main page;
+![image](https://user-images.githubusercontent.com/14310311/128740042-a539becd-463c-429d-9eff-23b1da7e4c7a.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+### TODO
+- Responsiveness;
+- Use React-Modal instead of alerts;
+- Unmark question as answered (if marked by mistake);
+- Multiple language support;
